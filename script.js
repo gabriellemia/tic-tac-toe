@@ -4,8 +4,8 @@
     gameboard = ["", "", "", "", "", "", "", "", ""];
     
    
-    const update = (index, value) => { index = 6, value = "X"
-        gameboard[index].textContent = value;
+    const update = (index, value) => {
+        gameboard[index] = value;
     };
 
     const getGameboard = () => gameboard;
@@ -29,19 +29,22 @@ const Game = (() => {
     let players = [];
     let currentPlayerIndex;
     let gameOver;
+    const o = "O";
+    const x = "X"; 
 
     const start = () => {
         players = [
             createPlayer(document.querySelector("#player1").value, "X"),
             createPlayer(document.querySelector("#player2").value, "O")
         ]
-        currentPlayerIndex = 0;
+        currentPlayerIndex = "X";
         gameOver = false; 
 
         const boxes = document.querySelectorAll(".box");
         boxes.forEach((box) => {
             box.addEventListener("click", handleClick);
         })
+
     
     }
 
@@ -50,8 +53,9 @@ const Game = (() => {
         if (Gameboard.getGameboard()[index] !== "")
             return;
 
-        Gameboard.update(index, players[currentPlayerIndex].marker);
-        currentPlayerIndex = currentPlayerIndex === 0 ? 1 : 0;
+        Gameboard.update(index, players[currentPlayerIndex]);
+        event.target.textContent = currentPlayerIndex;
+        currentPlayerIndex = currentPlayerIndex === x ? o : x;
             
     }
     return {
