@@ -1,24 +1,112 @@
 
-#gameBoard {
+body {
+    font-family: 'Rubik Dirt', cursive;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: black;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: 500;
+    margin-top: -50px;
+    margin-bottom: 0;
+    color: white;
+}
+
+
+#gameboard {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1r;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
     width: 600px;
     height: 600px;
-    border: 2px solid black;
+    border: 4px solid white;
     margin-bottom: 20px;
+    color: white;
 }
 
 .box {
-    border: 1px solid black;
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid white;
     justify-content: center;
     align-items: center;
-    font-size: 90%;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-size: 120px;
+    font-weight: 700;
+    color: white;
+}
+
+#box-0, #box-3, #box-6 {
+    border-left: 0;
+    border-right: 4px solid white;
 }
 
 input {
-    color: black;
-    
+    color: white;
+    font-size: 25px;
+    border-radius: 5px;
+    border: 2px solid white;
+    background-color: rgba(128, 128, 128, 0.178);
+    margin-right: 10px;
+    margin-bottom: 20px;
+    font-family: 'Rubik Dirt', cursive;
 }
+
+input:hover {
+    background-color: white;
+    color: black;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 50px;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+}
+ #new-btn {
+    width: 50%;
+    margin-right: 20px;
+    font-size: 20px;
+    font-family: 'Rubik Dirt', cursive;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.514);
+    border: none;
+    background-color: white;
+ }
+
+ #restart-btn {
+    width: 50%;
+    font-size: 20px;
+    font-family: 'Rubik Dirt', cursive;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.514);
+    border: none;
+    background-color: white;
+ }
+
+ #new-btn:hover {
+    background-color: rgb(43, 43, 43);
+    color: white;
+    box-shadow: none;
+ }
+
+ #restart-btn:hover {
+    background-color: rgb(43, 43, 43);
+    color: white;
+    box-shadow: none;
+ }
 
